@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaBars, FaTimes, FaGithub, FaLinkedin } from "react-icons/fa";
 import "./App.css";
 
 export default function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="app">
       {/* NAVBAR */}
@@ -10,7 +12,12 @@ export default function App() {
         <div className="container nav-inner">
           <h1 className="logo">Divakara K N</h1>
 
-          <nav className="nav-links nav-flex">
+          {/* Hamburger */}
+<div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+  {menuOpen ? <FaTimes /> : <FaBars />}
+</div>
+
+<nav className={`nav-links nav-flex ${menuOpen ? "active" : ""}`}>
   <a href="#about">About</a>
   <a href="#experience">Experience</a>
   <a href="#projects">Projects</a>
