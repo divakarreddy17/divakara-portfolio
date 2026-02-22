@@ -67,6 +67,25 @@ export default function App() {
             infectious disease early warning systems using R and Python.
           </p>
 
+          <div className="hero-cta">
+  <a
+    href="/resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn-primary"
+  >
+    View Resume
+  </a>
+
+  <a
+    href="/resume.pdf"
+    download
+    className="btn-outline"
+  >
+    Download Resume
+  </a>
+</div>
+
 
 
         </motion.div>
