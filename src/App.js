@@ -10,40 +10,43 @@ export default function App() {
       {/* NAVBAR */}
       <header className="navbar">
         <div className="container nav-inner">
-          <h1 className="logo">Divakara K N</h1>
-
-          {/* Hamburger */}
-<div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-  {menuOpen ? <FaTimes /> : <FaBars />}
+          <div className="logo-wrap">
+  <img src="/profile.jpeg" alt="Divakara" className="logo-img" />
+  <span className="logo-text">Divakara K N</span>
 </div>
 
-<nav className={`nav-links nav-flex ${menuOpen ? "active" : ""}`}>
-  <a href="#about">About</a>
-  <a href="#experience">Experience</a>
-  <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
-  <a href="#contact">Contact</a>
+          {/* Hamburger */}
+          <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </div>
 
-  <div className="nav-socials">
-    <a
-      href="https://github.com/divakarreddy17"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="nav-icon"
-    >
-      <FaGithub />
-    </a>
+          <nav className={`nav-links nav-flex ${menuOpen ? "active" : ""}`}>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
 
-    <a
-      href="https://www.linkedin.com/in/divakara-k-n-066042194"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="nav-icon linkedin"
-    >
-      <FaLinkedin />
-    </a>
-  </div>
-</nav>
+            <div className="nav-socials">
+              <a
+                href="https://github.com/divakarreddy17"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-icon"
+              >
+                <FaGithub />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/divakara-k-n-066042194"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-icon linkedin"
+              >
+                <FaLinkedin />
+              </a>
+            </div>
+          </nav>
         </div>
       </header>
 
@@ -64,8 +67,8 @@ export default function App() {
             infectious disease early warning systems using R and Python.
           </p>
 
-          
-          
+
+
         </motion.div>
 
         <motion.div
@@ -74,7 +77,9 @@ export default function App() {
           transition={{ duration: 0.6 }}
           className="hero-right"
         >
-          <div className="hero-badge">Divakara KN</div>
+          <div className="hero-badge">
+  <img src="/profile.jpeg" alt="Divakara" className="hero-img" />
+</div>
         </motion.div>
       </section>
 
@@ -111,34 +116,34 @@ export default function App() {
       </section>
 
       {/* PROJECTS */}
-<section id="projects" className="container section">
-  <h3 className="section-title">Projects</h3>
+      <section id="projects" className="container section">
+        <h3 className="section-title">Projects</h3>
 
-  <div className="projects-grid">
-    {projects.map((p, i) => (
-      <div key={i} className="glass project-card">
-        <h4 className="project-title">{p.title}</h4>
-        <p className="project-desc">{p.desc}</p>
+        <div className="projects-grid">
+          {projects.map((p, i) => (
+            <div key={i} className="glass project-card">
+              <h4 className="project-title">{p.title}</h4>
+              <p className="project-desc">{p.desc}</p>
 
-        <div className="project-tags">
-          {p.tech.map((t, idx) => (
-            <span key={idx} className="project-tag">
-              {t}
-            </span>
+              <div className="project-tags">
+                {p.tech.map((t, idx) => (
+                  <span key={idx} className="project-tag">
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <a
+                href={p.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-btn"
+              >
+                Source Code
+              </a>
+            </div>
           ))}
         </div>
-        <a
-  href={p.github}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="project-btn"
->
-Source Code
-</a>
-      </div>
-    ))}
-  </div>
-</section>
+      </section>
 
       {/* SKILLS */}
       <section id="skills" className="container section">
